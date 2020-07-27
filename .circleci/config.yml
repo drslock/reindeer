@@ -6,7 +6,7 @@ jobs:
       - image: cimg/openjdk:14.0
     steps:
       - checkout
-      - run: java --version
+      - run: mvn package
 
 orbs:
   maven: circleci/maven@0.0.12
