@@ -8,7 +8,8 @@ import java.util.Arrays;
 @SpringBootApplication
 public class ReindeerApplication {
 
-	private static final List<String> validNames = Arrays.asList(new String[]{"Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"});
+	String[] nameArray = new String[]{"Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"};
+	List<String> validNames = Arrays.asList(nameArray);
 
 	public static void main(String[] args) {
 		SpringApplication.run(ReindeerApplication.class, args);
