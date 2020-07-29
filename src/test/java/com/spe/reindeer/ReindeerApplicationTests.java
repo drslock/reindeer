@@ -35,7 +35,7 @@ class ReindeerApplicationTests {
 			JSONArray features = (JSONArray)document.get("features");
 			JSONObject geometry = (JSONObject)((JSONObject)features.get(0)).get("geometry");
 			JSONArray coordinates = (JSONArray)geometry.get("coordinates");
-			assertEquals(Math.round((double)coordinates.get(0)), 3, "Check lat is approx -3");
+			assertEquals(Math.round((double)coordinates.get(0)), -3, "Check lat is approx -3");
 			assertEquals(Math.round((double)coordinates.get(1)), 51, "Check lon is approx 51");
 		} catch(MalformedURLException mue) {
 		} catch(ParseException mue) {
