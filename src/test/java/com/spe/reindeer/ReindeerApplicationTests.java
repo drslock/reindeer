@@ -26,7 +26,7 @@ class ReindeerApplicationTests {
 			connection.setDoOutput(true);
 			connection.setRequestMethod("GET");
 			InputStream stream = connection.getInputStream();
-			InputStreamReader reader = new InputStreamReader(stream, "UTF-8");
+			InputStreamReader reader = new InputStreamReader(stream);
 			JSONParser parser = new JSONParser();
 			JSONObject document = (JSONObject)parser.parse(reader);
 			System.out.print(document);
@@ -37,6 +37,7 @@ class ReindeerApplicationTests {
 			JSONArray coordinates = (JSONArray)geometry.get("coordinates");
 			assertEquals(Math.round((double)coordinates.get(0)), -3, "Check lat is approx -3");
 			assertEquals(Math.round((double)coordinates.get(1)), 51, "Check lon is approx 51");
+			System.out.println("[" + coordinates.get(0) + "," + coordinates.get(1) + "]");
 		} catch(MalformedURLException mue) {
 		} catch(ParseException mue) {
 		} catch(IOException ioe) {
